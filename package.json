@@ -33,6 +33,7 @@
     ]
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.0.4",
     "web-vitals": "^4.2.4"
   }
 }
