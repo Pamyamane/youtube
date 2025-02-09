@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 const Sidebar = () => {
     const IsopenMenu = useSelector(store => store.app.IsopenMenu)
     const USPopularVideo = useSelector((store) => store.PopularVideo?.ISPopularVideos); 
-    console.log(USPopularVideo,"USPopularVideo");
+ 
         if (!IsopenMenu) return null;
     
   return (

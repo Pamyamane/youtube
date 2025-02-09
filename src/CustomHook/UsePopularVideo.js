@@ -6,11 +6,14 @@ import { AddPopularVideos } from '../Utils/PopularVideoSlice'
 const UsePopularVideo = () => {
 
     const dispatch = useDispatch()
+   
 
+    
+    
     const getpopularVideo = async ()=>{
         const video =  await fetch(YOUTUBE_VIDEO_API)
         const Videodata =  await video.json()
-        console.log(Videodata,"Videodata");
+     
         
         dispatch(AddPopularVideos(Videodata.items))
     }
