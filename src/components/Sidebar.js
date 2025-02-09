@@ -1,20 +1,29 @@
 import React from "react";
-import { FaHome, FaMusic, FaVideo, FaFilm, FaHistory, FaClock, FaList } from "react-icons/fa";
+import {
+  FaHome,
+  FaMusic,
+  FaVideo,
+  FaFilm,
+  FaHistory,
+  FaClock,
+  FaList,
+} from "react-icons/fa";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
-    const IsopenMenu = useSelector(store => store.app.IsopenMenu)
-    const USPopularVideo = useSelector((store) => store.PopularVideo?.ISPopularVideos); 
- 
-        if (!IsopenMenu) return null;
-    
+  const IsopenMenu = useSelector((store) => store.app.IsopenMenu);
+
+
+  if (!IsopenMenu) return null;
+
   return (
     <div className="p-5 shadow-lg w-64 h-screen bg-gray-100 overflow-y-auto">
       {/* Primary Navigation */}
       <ul className="space-y-3 border-b pb-3">
         <li className="flex items-center gap-3 p-2 hover:bg-gray-200 rounded-md cursor-pointer">
           <FaHome className="text-blue-500" />
-          Home
+          <Link to="/">Home</Link>
         </li>
         <li className="flex items-center gap-3 p-2 hover:bg-gray-200 rounded-md cursor-pointer">
           <FaVideo className="text-red-500" />
