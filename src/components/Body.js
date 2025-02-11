@@ -9,12 +9,11 @@ const Body = () => {
   UsePopularVideo();
   return (
     
-    <div className='flex'>
-
-        <Sidebar/>
-        <Outlet/>
-       
-    </div>
+   
+    <div className="pt-14"> {/* Space for fixed header */}
+    <Sidebar />
+    <Outlet />
+  </div>
   )
 }
 

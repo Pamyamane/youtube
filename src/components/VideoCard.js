@@ -16,31 +16,36 @@ const VideoCard = ({ USPopularVideo }) => {
   const { snippet, statistics, id } = video;
 
   return (
-    <div className="flex flex-col bg-white rounded-xl overflow-hidden hover:bg-gray-200 transition-colors duration-200 cursor-pointer">
-      {/* Thumbnail */}
-      <div className="relative">
-        <img
-          className="w-full aspect-video object-cover"
-          src={snippet?.thumbnails?.medium?.url}
-          alt={snippet?.title}
-        />
-      </div>
+    <div className="w-full cursor-pointer">
+    {/* Thumbnail */}
+    <div className="relative pb-[56.25%] rounded-xl overflow-hidden mb-3">
+      <img
+        className="absolute top-0 left-0 w-full h-full object-cover"
+        src={snippet?.thumbnails?.medium?.url}
+        alt={snippet?.title}
+      />
+    </div>
 
-      {/* Video Info */}
-      <div className="p-4 flex-1">
-        <h3 className="font-semibold text-black mb-2 line-clamp-2 text-sm leading-5">
+    {/* Video Info */}
+    <div className="flex gap-3">
+      <div className="flex-shrink-0">
+        <div className="w-9 h-9 rounded-full bg-gray-100"></div>
+      </div>
+      <div className="flex-1 min-w-0"> {/* Added min-w-0 for text truncation */}
+        <h3 className="font-medium text-sm line-clamp-2 mb-1 leading-5">
           {snippet?.title}
         </h3>
-
-        <p className="text-gray-500 text-sm">{snippet?.channelTitle}</p>
-
-        <div className="flex items-center text-gray-500 text-sm space-x-2 mt-1">
-          <span>{formatCount(statistics?.viewCount)} views</span>
-          <span>•</span>
-          <span>{formatCount(statistics?.likeCount)} likes</span>
+        <div className="text-gray-600 text-xs">
+          <p className="mb-1">{snippet?.channelTitle}</p>
+          <div className="flex items-center">
+            <span>{formatCount(statistics?.viewCount)} views</span>
+            <span className="mx-1">•</span>
+            <span>{formatCount(statistics?.likeCount)} likes</span>
+          </div>
         </div>
       </div>
     </div>
+  </div>
   );
 };
 
